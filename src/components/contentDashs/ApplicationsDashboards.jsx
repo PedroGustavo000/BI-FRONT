@@ -3,7 +3,7 @@ import './../style/contentdash.css';
 import {AulasDadas, LucroMensal , UsuariosMeses} from "../dashs/ChartsApplication";
 //import api from '../contentDashs/api'
 
-async function ApplicationDash() {
+function ApplicationDash() {
 
 //    const {dado} = await api.get('/qtd-aulas-hoje');
 

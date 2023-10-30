@@ -75,7 +75,7 @@ function UsuariosMeses() {
     )
 }
 
-async function AulasDadas(){
+function AulasDadas(){
   
   const [data, setData] = useState(null);
   const token = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmaWxpcGVAZW1haWwuY29tIiwiaWF0IjoxNjk4MjY4Njc4LCJleHAiOjE3MDE4Njg2Nzh9.SNOfaRzetJ4XWfk-4WwCuB49Kjr0VdEhep8cIc3vyH6pkLtj4x4Tpp6PDTiUXF0BASUSbGmvP0zT4dZ_oO9fHw';
@@ -92,8 +92,10 @@ async function AulasDadas(){
         });
 
         if (!response.ok) {
+          console.error(`Error: ${response.status} - ${response.statusText}`);
           throw new Error('Erro ao buscar dados');
         }
+        
 
         const jsonData = await response.json();
 
@@ -161,6 +163,7 @@ async function AulasDadas(){
   };
 
   return (
+    <>
     <div
       style={{
         width: '100%',
@@ -170,14 +173,15 @@ async function AulasDadas(){
         justifyContent: 'center',
         flexDirection: 'column',
       }}
-    >
+      >
       <strong>Aulas Dadas</strong>
       {data ? <Bar data={data} options={options} /> : <p>Carregando dados...</p>}
     </div>
+      </>
   );
 };
 
-async function LucroMensal() {
+function LucroMensal() {
 /*
   const [dados, setData] = useState(null);
   const token = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmaWxpcGVAZW1haWwuY29tIiwiaWF0IjoxNjk4MjY4Njc4LCJleHAiOjE3MDE4Njg2Nzh9.SNOfaRzetJ4XWfk-4WwCuB49Kjr0VdEhep8cIc3vyH6pkLtj4x4Tpp6PDTiUXF0BASUSbGmvP0zT4dZ_oO9fHw';
